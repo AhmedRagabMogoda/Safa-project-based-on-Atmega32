@@ -1,11 +1,11 @@
 ### Safe Project Description
 
-This project involves designing an electronic safe using an ATmega32 microcontroller, a keypad for input, an LCD display for feedback, and a DC motor to control the locking mechanism. The microcontroller interfaces with external EEPROM to store and verify a user-set password for accessing the safe.
+This project involves designing an electronic safe using an ATmega32 microcontroller, a keypad for input, an LCD for feedback, and a DC motor to control the locking mechanism. The microcontroller interfaces with external EEPROM to store and verify a user-set password for accessing the safe.
 
 #### Components Used:
 
 1. **ATmega32 Microcontroller**: 
-   - Central control unit that manages input from the keypad, interacts with the EEPROM, updates the LCD display, and controls the DC motor.
+   - Central control unit that manages input from the keypad, interacts with the EEPROM, updates the LCD, and controls the DC motor.
    
 2. **Keypad**: 
    - A numeric keypad used to input passwords for setting and verifying the code to open the safe.
@@ -34,16 +34,16 @@ This project involves designing an electronic safe using an ATmega32 microcontro
    - When the user attempts to open the safe, they must enter the 4-digit password.
    - The entered password is compared with the stored password in the EEPROM.
    - If the password matches, the safe unlocks, and the DC motor rotates to open the lock.
-   - The LCD displays a success message: "correct password" and "the safe opened".
+   - The LCDs a success message: "correct password" and "the safe opened".
 
 4. **Changing the Password**:
    - After unlocking, the user has an option to change the password.
-   - The user is prompted to enter the current password again to confirm identity, then a new password can be set following the same procedure as the initial setup.
+   - The user is prompted to enter the current password again to confirm identity, and then a new password can be set following the same procedure as the initial setup.
 
 5. **Wrong Password Handling**:
    - The user has a maximum of three attempts to enter the correct password.
    - If a wrong password is entered, the system decrements the remaining attempts and displays "wrong password" and the number of remaining attempts.
-   - After three failed attempts, the system locks out the user for a period of time (e.g., 60 seconds), displaying a countdown on the LCD.
+   - After three failed attempts, the system locks out the user for some time (e.g., 60 minutes), displaying a countdown on the LCD.
 
 6. **EEPROM Usage**:
    - **EEPROM_status_address (0x20)**: Indicates if a password has been set. Initialized to `0xFF` (default) if no password is set.
